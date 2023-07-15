@@ -8,11 +8,12 @@ import { HiMenu } from 'react-icons/hi'
 import { AiFillCloseCircle } from 'react-icons/ai'
 
 import { userQuery } from '../utils/data'
+import { fetchUser } from '../utils/fetchUser'
 
 const Home = () => {
   const [toggleSidebar, setToggleSidebar] = useState(false);
   const [user, setUser] = useState(null);
-  const userInfo = localStorage.getItem('user') !== 'undefined'? JSON.parse(localStorage.getItem('user')) : localStorage.clear()
+  const userInfo = fetchUser()
   const scrollRef = useRef(null)
 
   useEffect(() => {
