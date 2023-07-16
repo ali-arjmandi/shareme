@@ -100,7 +100,7 @@ const Pin = ({ pin }) => {
                   className='bg-white flex items-center gap-2 text-black font-bold p-2 pl-4 pr-4 rounded-full opacity-70 hover:opacity-100 hover:shadow-md'
                 >
                   <BsFillArrowUpRightCircleFill />
-                  {pin.destination?.length > 18 ? `${pin.destination.slice(8, 18)}...` : pin.destination.slice(8)}
+                  {pin.destination?.length > 15 ? `${pin.destination.slice(0, 15)}...` : pin.destination}
                 </a>
               )}
               {pin.postedBy?._id === user.sub && (
@@ -122,7 +122,6 @@ const Pin = ({ pin }) => {
         <img src={user.picture} alt="user-profile" className='w-8 h-8 rounded-full object-cover' />
         <p className='capitalize'>{pin.postedBy?.userName?.length > 25 ? `${pin.postedBy?.userName.slice(0, 25)}...` : pin.postedBy?.userName}</p>
       </Link>
-       
     </div>
   ) 
 }
