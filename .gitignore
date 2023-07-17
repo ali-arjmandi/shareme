@@ -5,6 +5,7 @@ frontend/.env
 frontend/npm-debug.log*
 frontend/yarn-debug.log*
 frontend/yarn-error.log*
+*.DS_Store
 
 backend/node_modules
 backend/.vscode
