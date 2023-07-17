@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import {Link, Route, Routes, useNavigate} from 'react-router-dom'
+import {Link, Route, Routes} from 'react-router-dom'
 import {Sidebar, UserProfile} from '../components'
 import {client} from '../client'
 import logo from '../assets/logo.png'
@@ -16,12 +16,7 @@ const Home = () => {
   const userInfo = fetchUser()
   const scrollRef = useRef(null)
 
-  const navigate = useNavigate()
-
   useEffect(() => {
-    if (!userInfo) {
-      return navigate('/login')
-    }
     const query = userQuery(userInfo?.sub);
     client.fetch(query)
     .then((data) => {

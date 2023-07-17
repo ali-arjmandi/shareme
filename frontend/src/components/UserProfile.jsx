@@ -27,7 +27,6 @@ const UserProfile = () => {
       
       client.fetch(query)
       .then((data) => {
-        console.log(data)
         setUser(data[0])
       })
     }
