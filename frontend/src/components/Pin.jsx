@@ -118,7 +118,7 @@ const Pin = ({ pin }) => {
           </div>
         )}
       </div>
-      <Link to={`user-profile/${user?._id}`} className='flex gap-2 mt-2 items-center'>
+      <Link to={`user-profile/${user?.sub}`} className='flex gap-2 mt-2 items-center'>
         <img src={user.picture} alt="user-profile" className='w-8 h-8 rounded-full object-cover' />
         <p className='capitalize'>{pin.postedBy?.userName?.length > 25 ? `${pin.postedBy?.userName.slice(0, 25)}...` : pin.postedBy?.userName}</p>
       </Link>
